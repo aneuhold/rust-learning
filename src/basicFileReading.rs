@@ -1,14 +1,41 @@
 use rand::prelude::*;
+use std::fmt::{self, Display};
 
 /// Returns true `1` in `denominator` times.
 fn one_in(denominator: u32) -> bool {
     thread_rng().gen_ratio(1, denominator)
 }
 
+#[derive(Debug, PartialEq)]
+pub enum FileState {
+    Open,
+    Closed,
+}
+
 #[derive(Debug)]
 struct File {
     name: String,
     data: Vec<u8>,
+    state: FileState,
+}
+
+impl Display for FileState {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match *self {
+            FileState::Open => write!(f, "Open"),
+            FileState::Closed => write!(f, "Closed"),
+        }
+    }
+}
+
+impl Display for File {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "File ({}), state: {}, data: {:?}",
+            self.name, self.state, self.data
+        )
+    }
 }
 
 impl File {
@@ -16,6 +43,7 @@ impl File {
         File {
             name: String::from(name),
             data: Vec::new(),
+            state: FileState::Closed,
         }
     }
 
