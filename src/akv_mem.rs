@@ -1,4 +1,3 @@
-use std::slice;
 use std::str;
 
 use libactionkv::ActionKV;
@@ -48,17 +47,4 @@ fn main() {
         }
         _ => eprintln!("{}", &USAGE),
     }
-
-    let story = "Once upon a time...";
-
-    let ptr = story.as_ptr();
-    let len = story.len();
-
-    let s = unsafe {
-        // First, we build a &[u8]...
-        let slice: &[u8] = slice::from_raw_parts(ptr, len);
-
-        // ... and then convert that slice into a string slice
-        str::from_utf8(slice)
-    };
 }
