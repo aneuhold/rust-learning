@@ -1,4 +1,5 @@
+mod networking;
+
 fn main() {
-    println!("Hello, world!");
-    println!("I'm a Rustacean!");
+    networking::run_manual_get_request().unwrap();
 }

@@ -3,5 +3,5 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer", // Makes the magic
     "editor.formatOnSave": true // Optional
   },
+  "rust-analyzer.showUnlinkedFileNotification": false
 }
-
