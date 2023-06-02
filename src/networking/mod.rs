@@ -3,6 +3,8 @@ use std::error::Error;
 use std::io::prelude::*;
 use std::net::TcpStream;
 
+pub mod macgen;
+
 /// Uses the simpler crate reqwest to make a request to the Rust in Action
 /// website.
 #[allow(dead_code)]
