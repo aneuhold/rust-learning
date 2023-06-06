@@ -19,7 +19,7 @@ impl Display for MacAddress {
     }
 }
 
-impl MacAddres {
+impl MacAddress {
     pub fn new() -> MacAddress {
         let mut octets: [u8; 6] = [0; 6];
         rand::thread_rng().fill_bytes(&mut octets);

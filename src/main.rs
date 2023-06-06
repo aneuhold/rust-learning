@@ -1,5 +1,5 @@
-mod networking;
+mod time;
 
 fn main() {
-    networking::run_manual_get_request().unwrap();
+    time::start_app();
 }
