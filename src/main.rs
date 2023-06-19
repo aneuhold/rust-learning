@@ -1,5 +1,9 @@
-mod time;
+use svg_generation::run_svg_code;
 
-fn main() {
-    time::start_app();
+mod networking;
+mod svg_generation;
+
+#[tokio::main]
+async fn main() {
+    run_svg_code().await;
 }

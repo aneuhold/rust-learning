@@ -1,5 +1,3 @@
-extern crate rand;
-
 use rand::RngCore;
 use std::fmt;
 use std::fmt::Display;
